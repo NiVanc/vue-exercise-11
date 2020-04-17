@@ -25,12 +25,10 @@
 </template>
 
 <script>
+import { textWithLength } from "./textWithLength";
+
 export default {
-  data() {
-    return {
-      text: "Some crazy text"
-    };
-  },
+  mixins: [textWithLength],
   filters: {
     reverseText(value) {
       return value
@@ -45,9 +43,6 @@ export default {
         .split("")
         .reverse()
         .join("");
-    },
-    textWithLength() {
-      return `${this.text} (${this.text.length})`;
     }
   }
 };
